@@ -1,0 +1,21 @@
+Cryptographic hash functions
+
+Hash property 1 Collision Free
+
+-Collisions do exist, but NOBODY can find.
+
+-How to find a collision?
+(try pow(2,130) randomly chosen inputs
+99.8% chance that two of them will collide..)
+This works no matter what H is...
+but it takes too long to matter
+
+-There’s no hash function in existence which has been proven to be collision free. 
+There just some that people have tried really hard to find collisions and haven’t succeeded. 
+And so we choose to believe that those are collision free.
+
+-We can use hash function as Message Digest. If we know that x and y have the same hash, 
+then it’s safe to assume that x and y are the same.(e.g. Big File) 
+It gives us a very efficient way to remember things we’ve seen before and recognize them again.
+
+Hash property 2 Hiding
