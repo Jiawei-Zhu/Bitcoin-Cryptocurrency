@@ -19,3 +19,23 @@ then it’s safe to assume that x and y are the same.(e.g. Big File)
 It gives us a very efficient way to remember things we’ve seen before and recognize them again.
 
 Hash property 2 Hiding
+-If r is chosen from a probability distribution that has high min-entropy, then given H(r|x), it is infeasible
+to find x.
+
+-High min-entropy means that the distribution is "very spread out", so that no particular value is chosen with more
+than negligible probability.
+
+-High min-entropy(高小熵) means 较高的“不可预测性”. 小熵是信息理论中衡量某个结果的可预测性的一个指标。
+高小熵指的是变量呈均匀分布（随机分布）。
+
+-承诺方案（Commitment Scheme）被认为是密码学领域中一类重要的密码学基本模型，承诺具有隐藏性和保密性。承诺模型可以看作一个密封信件的数字等价体。
+如果Alice想承诺某个信息m，则她可把m放入一个密封的信封内，而无论什么时候她想公开这个信息，则只需要打开信封。
+这个过程要求数字信件能够隐藏信息，即承诺的隐藏性，同时Alice也不能改变m；而通过承诺的打开，
+任何人都能验证他所得到的m其实就是Alice最初承诺的信息m，即承诺的绑定性。
+
+·承诺值计算commit(m, r)：输入消息m和随机值r，返回承诺值c(=commit(m, r))
+·承诺验证verify(c, m, r):输入承诺c，消息m和随机值r，若c==commit(m, r)，返回真，否则为假。
+
+Hash property 3: Puzzle-friendly
+-For every possible output value y, if k is chosen from a distrbution with high min-entropy,
+then is it infeasible to find x such that H(k|x)=y.
