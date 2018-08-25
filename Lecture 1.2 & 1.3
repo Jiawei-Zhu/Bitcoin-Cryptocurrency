@@ -1,0 +1,52 @@
+Lecture 1.2
+Hash Pointers and Data Structures
+
+-Hash pointer is:
+*pointer to where some info is stored, and
+*(cryptographic)hash of the info
+
+-If we have a hash pointer, we can
+*ask to get the info back, and
+*verify that it hasn't changed
+
+-Key idea: bulid data structures with hash pointers
+
+-Use case: tamper-evident(防篡改) log
+
+-A hash pointer tells us where something is and what its value was.
+
+-binary tree with hash pointers = "Merkle tree"
+it takes log n time to verify it
+
+-advantages of Merkle trees
+Tree holds many items but just need to remember the root hash
+Can verify membership in O(log n) time/space
+
+
+Lecture 1.3
+Digital Signatures
+
+-What we want from signatures
+Only you can sign, but anyone can verify
+Signature is tied to a particular document
+ can't be cut-and-pasted to another doc
+
+-Signature is just some string of bits
+
+-API for digital signatures
+(sk,pk) := generateKeys(keysize)
+                                    sk: secret signing key
+                                    pk: public verification key
+sig := sign(sk,message)
+
+isValid := verify(pk,message,sig)
+
+can be randomized algorithms(good randomness is essential
+
+-Practical stuff...
+algorithms are randomized & need good source of randomness
+limit on message size(fix: use Hash(message) rather than message
+fun trick: sign a hash pointer & signature 'covers' the whole structure
+
+-If you were to sign the hash pointer that was at the end of a blockchain, 
+the result is that you will be effectively be digitally signing the entire contents of that blockchain.
