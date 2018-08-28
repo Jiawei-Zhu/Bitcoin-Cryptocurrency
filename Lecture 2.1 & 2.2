@@ -11,3 +11,37 @@ Mining:
     often seen as undesirable
 Updates to software:
     core developers trusted by community, have great power
+
+
+Lecture 2.2
+Distributed Consensus
+
+-Bitcoin’s key challenge: distributed consensus(分布式一致性)
+
+-how consensus could work in Bitcoin
+at any given time:
+·All nodes have a sequence of blocks of transactions they've reached consensus on
+·Each node has a set of outstanding transactions it's heard about
+
+-why consensus is hard
+·Nodes may crash
+·Nodes may be malicious
+
+Network is imperfect
+·Not all pairs of nodes connected
+·Faults in network
+·Latency(延迟: no notion of global time
+
+-Understanding impossibility results(理解那些认为分布一致性不可能的结论
+these results say more about the model than about the problem
+the models were developed to study systems like distributed databases
+
+-Some things Bitcoin does differently
+Introduces incentives(引入激励机制
+·Possible only because it's a currency!
+Embraces randomness
+·Does away with the notion of a specific end-point
+·Consensus happens over long time scales - about 1 hour
+
+·Bitcoin doesn’t quite solve the distributed consensus problem in a general sense.
+But it solves it in the context of the currency system.
