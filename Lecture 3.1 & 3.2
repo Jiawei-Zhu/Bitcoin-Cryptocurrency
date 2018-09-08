@@ -20,3 +20,31 @@ Design goals
 And that’s the only interaction with memory that you have with a stack-based programming language. 
 There’s no variable, so the only thing you can do to write data to memory is to push it onto the stack. 
 
+-Bitcoin script instructions
+256 opcodes total(15 disabled, 75 reserved)
+· Arithmetic
+· If/then
+· Logic/data handling
+· Crypto!
+  Hashes
+  Signature verification
+  Multi-signature verification
+
+-Bitcoin scripts in practice(as of 2014)
+· Most nodes whitelist known scripts
+· 99.9% are simple signature checks
+· ~0.01% are MULTISIG
+· ~0.01% are Pay-to-Script-Hash
+· Remainder are errors, proof-of-burn
+
+-Proof of burn: 
+there is 2 main things that this gets used for. The first is to write arbitrary data into the blockchain
+if for some reason you want to write your name and if you want to time stamp and prove that you know some 
+data at a specific time, you can create a very low value Bitcoin transaction that’s proof of burn. 
+So you can destroy a very small amount of currency and in exchange you can write whatever you want into the blockchain, 
+which should be kept around forever.
+
+(Check Pic)
+
+-交易的数据结构没有交易费的字段，交易费通过所有输入的总和，以及所有输出的总和之间的差来表示，
+即：交易费 = 求和（所有输入） - 求和（所有输出）
