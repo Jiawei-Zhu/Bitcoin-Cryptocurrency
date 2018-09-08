@@ -1,0 +1,53 @@
+Lecture 3.4
+Bitcoin blocks
+
+-Why bundle transactions together?
+· Single unit of work for miners
+· Limit length of hash-chain of blocks(faster to verify history
+
+
+Lecture 3.5
+The Bitcoin Network
+
+-Every node on Bitcoin is an equal peer.
+
+-Bitcoin P2P network
+· Ad-hoc protocol(runs on TCP port 8333)
+· Ad-hoc network with random topology
+· All nodes are equal
+· New nodes can join at any time
+· Foget non-responding nodes after 3 hours
+
+-Should I relay a proposed transaction?
+· Transaction valid with current blockchain
+· (default)script matches a whitelist
+  Avoid unusual scripts
+· Haven't seen before
+  Avoid infinite loops
+· Doesn't conflict with others I've relayed
+  Avoid double-spends
+
+-Sanity checks only…
+Some nodes may ignore them!
+
+-Race conditions
+Transactions or blocks may conflict
+· Default behavior: accept what you hear first
+· Network position matters
+· Miners may implement other logic
+
+-Fully-validating nodes
+· Permanently connected
+· Store entire blockchain
+· Hear and forward every node/tansaction
+Fully-validating nodes, maintain the entire set of UTXO
+
+-SPV(简单支付验证): Simple Payment Verification
+Thin/SPV clients(not fully-validating)
+Idea: don't store everything
+· Store block headers only
+· Request transactions as needed
+  to verify incoming payment
+· Trust fully-validating nodes
+
+1000x cost sabings!(20 GB - 23 MB)
