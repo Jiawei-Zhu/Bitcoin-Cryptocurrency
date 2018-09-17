@@ -1,0 +1,39 @@
+Lecture 3.6
+Limitations & improvements
+
+-Hard-coded limits in Bitcoin
+· 10 min average creation time per block
+· 1M bytes in a block
+· 20,000 signature operations per block
+· 100M satoshis per bitcoin
+· 21M total bitcoins maximum(总量2100万
+· 50, 25, 12.5 ... bitcoin mining reward
+
+-Throughput(生产力) limits in Bitcoin
+· 1M bytes/block (10 min)
+· >250 bytes/transaction
+· 7 transactions/sec
+Compare to:
+VISA: 2,000-10,000 transactions/sec
+PayPal: 50-100 transaction/sec
+
+-Cryptographic limits in Bitcoin
+· Only 1 signature algorithm(ECDSA/P256)
+· Hard-coded hash functions
+
+-Soft forks
+Observation: we can add new features which only limit the set of valid transactions
+Need majority of nodes to enforce new rules
+RISK: Old nodes might mine now-invalid blocks
+
+-Soft fork possibilities
+· New signature schemes
+· Extra per-block metadata
+  Shove in the coinbase parameter
+  Commit to UTXO tree in each block
+
+-Hard forks
+· New op codes
+· Changes to size limits
+· Changes to mining rate
+· Many small bug fixes
